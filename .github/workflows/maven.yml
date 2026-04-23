@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  # Silences the deprecation warning and opts into the latest GitHub runner node version
+  # Forces GitHub Actions to use Node 24 and clears the deprecation warning
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
@@ -26,12 +26,11 @@ jobs:
           cache: maven
 
       - name: Run Selenium Tests
-        # This ensures Maven runs inside the specific module folder
         working-directory: ./ui-automation-selenium
+        # -Dheadless=true overrides the pom.xml default for the CI environment
         run: mvn clean test -Dheadless=true
 
       - name: Generate Allure Report
-        # Only runs if tests complete (even if some failed) to show results
         if: always()
         working-directory: ./ui-automation-selenium
         run: mvn allure:report
@@ -41,5 +40,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: ui-automation-selenium/allure-results
+          # Maven puts generated results inside the 'target' folder
+          path: ui-automation-selenium/target/allure-results
           retention-days: 20
