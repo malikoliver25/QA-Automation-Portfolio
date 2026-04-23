@@ -1,25 +1,11 @@
 # Enterprise QA Automation Monorepo | Java • Playwright • Appium • API
 
-## Strategic Vision
-This repository is a high-performance, multi-layered automation ecosystem engineered for **Shift-Left Testing**. Built as a **Maven Monorepo**, it demonstrates a unified strategy for validating Web, Mobile, API, and Database layers, ensuring zero-defect delivery in fast-paced Agile/CI-CD environments.
-
----
-
-## Tech Stack & Ecosystem
-
-| Layer | Technologies |
-| :--- | :--- |
-| **Web UI** | **Java**, Selenium WebDriver, **Playwright**, JavaScript/TypeScript |
-| **Mobile** | **Appium**, Android Studio, Xcode, **BrowserStack** |
-| **API** | **REST Assured**, Postman (Newman), WireMock, Mockito |
-| **Database** | **PostgreSQL** (Backend Data Validation, Stored Procedures) |
-| **Infrastructure** | **Docker**, Jenkins, GitHub Actions, Azure Pipelines |
-| **Cloud/DevOps** | **AWS (EC2, S3)**, Maven, Git (GitFlow) |
-| **Reporting** | **Allure Reports**, Log4j/SLF4J, Chrome DevTools |
+A comprehensive, enterprise-level Quality Assurance automation portfolio demonstrating cross-platform testing capabilities. This monorepo houses scalable, maintainable, and highly efficient test frameworks designed to validate UI, Mobile, API, and Database layers.
 
 ---
 
 ## Architectural Excellence
+
 * **Design Patterns:** Implementation of **Singleton** for session management and **Factory Pattern** for cross-framework (Selenium/Playwright/Appium) instantiation.
 * **Mobile Excellence:** **Appium-based** test suites for Android and iOS, validated across 5+ device configurations using **BrowserStack**.
 * **Database Integrity:** Integrated **PostgreSQL** utilities for backend state verification using JOINs and subqueries to ensure UI/Mobile actions reflect correctly in the DB.
@@ -28,10 +14,13 @@ This repository is a high-performance, multi-layered automation ecosystem engine
 
 ---
 
-## Live Execution & Reporting
-* ** [View Live Allure Report](https://malikoliver25.github.io/QA-Automation-Portfolio/)** *(Link generated via GitHub Actions)*
-* ** [Watch Execution Demo]([Link to your Video])**
-* ** [Launch in GitHub Codespaces](https://github.com/codespaces/new?repo=malikoliver25/QA-Automation-Portfolio)** *(Run tests instantly in your browser)*
+## Live Execution & Artifacts
+
+To maintain repository speed and health, heavy video files and execution artifacts are hosted externally.
+
+* **[Watch Execution Demo & View Artifacts](https://drive.google.com/drive/folders/1zVxzCtdOgtxPKO9ZpSNvtv40k_vcwzf5?usp=sharing)** *(Hosted securely on Google Drive)*
+* **View Live Allure Report** *(Link generated via GitHub Actions)*
+* **Launch in GitHub Codespaces** *(Run tests instantly in your browser)*
 
 ---
 
@@ -42,23 +31,26 @@ This repository is a high-performance, multi-layered automation ecosystem engine
 | `ui-automation-selenium` | Web Testing | Java, Selenium | **Active** |
 | `ui-automation-playwright` | Modern Web Testing | Java, Playwright | **In Development** |
 | `mobile-automation-appium` | Mobile (iOS/Android) | Appium, Java | **In Development** |
-| `api-automation-restassured`| Backend Validation | REST Assured | **In Development** |
+| `api-automation-restassured` | Backend Validation | REST Assured | **In Development** |
 | `db-validation-sql` | Data Integrity | PostgreSQL | **In Development** |
 | `performance-jmeter` | Load Testing | JMeter | **Planned** |
 
 ---
 
 ## How To Run
-1. **Clone & Navigate:**
-   ```bash
-   git clone [https://github.com/malikoliver25/QA-Automation-Portfolio.git](https://github.com/malikoliver25/QA-Automation-Portfolio.git)
-   cd QA-Automation-Portfolio
-## Execute Full Regression:
+
+**1. Clone & Navigate:**
+```bash
+git clone https://github.com/malikoliver25/QA-Automation-Portfolio.git
+cd QA-Automation-Portfolio
+
+Execute Full Regression:
 Bash
 mvn clean install
-## Generate Local Reports:
+
+Generate Local Reports:
 Bash
 allure serve allure-results
 
-## Contact:
-Linkedin: www.linkedin.com/in/malik-o-1b4359115
+Contact
+LinkedIn: www.linkedin.com/in/malik-o-1b4359115
