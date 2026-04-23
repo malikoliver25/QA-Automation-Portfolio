@@ -2,8 +2,11 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 /*
  * DriverManager Class (Factory Design Pattern)
@@ -11,20 +14,43 @@ import org.openqa.selenium.edge.EdgeDriver;
  */
 public class DriverManager {
 
-    //Manufactures a specific WebDriver based on the provided browser name.
+    // Manufactures a specific WebDriver based on the provided browser name.
     public static WebDriver getDriver(String browserType) {
         WebDriver driver;
 
+        // Read the 'headless' property from the Maven command (-Dheadless=true)
+        String headless = System.getProperty("headless");
+        boolean isHeadless = "true".equalsIgnoreCase(headless);
+
         switch (browserType.toLowerCase()) {
             case "firefox":
-                driver = new FirefoxDriver();
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                if (isHeadless) {
+                    firefoxOptions.addArguments("-headless");
+                }
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
+
             case "edge":
-                driver = new EdgeDriver();
+                EdgeOptions edgeOptions = new EdgeOptions();
+                if (isHeadless) {
+                    edgeOptions.addArguments("--headless");
+                    edgeOptions.addArguments("--disable-gpu");
+                }
+                driver = new EdgeDriver(edgeOptions);
                 break;
+
             default:
-                // Fallback to Chrome as the default browser if input is invalid or empty
-                driver = new ChromeDriver();
+                // Default to Chrome
+                ChromeOptions chromeOptions = new ChromeOptions();
+                if (isHeadless) {
+                    chromeOptions.addArguments("--headless=new");
+                    chromeOptions.addArguments("--disable-gpu");
+                    chromeOptions.addArguments("--no-sandbox");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--window-size=1920,1080");
+                }
+                driver = new ChromeDriver(chromeOptions);
                 break;
         }
 
