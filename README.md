@@ -25,7 +25,7 @@ A comprehensive, enterprise-level Quality Assurance automation portfolio demonst
 ## Live Execution & Artifacts
 To maintain repository speed and health, heavy video files and execution artifacts are hosted externally.
 * **[Watch Execution Demo & View Artifacts](https://drive.google.com/drive/folders/1zVxzCtdOgtxPKO9ZpSNvtv40k_vcwzf5?usp=drive_link)** *(Hosted securely on Google Drive)*
-* **View Live Allure Report** *(Link generated via GitHub Actions)*
+* **[View Live Allure Report](https://github.com/malikoliver25/QA-Automation-Portfolio/actions)** *(Link generated via GitHub Actions)*
 * **Launch in GitHub Codespaces** *(Run tests instantly in your browser)*
 
 ---
